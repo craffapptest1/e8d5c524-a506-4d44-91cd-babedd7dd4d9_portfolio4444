@@ -29,7 +29,7 @@ def auto_migrate():
 
 auto_migrate()
 
-app = FastAPI(title="portfolio4444 API")
+app = FastAPI(title="Your API")
 
 app.add_middleware(
     CORSMiddleware,
@@ -41,7 +41,7 @@ app.add_middleware(
 
 @app.get("/health")
 async def health_check():
-    return JSONResponse(content={"status": "ok", "service": "portfolio4444"}, status_code=200)
+    return JSONResponse(content={"status": "ok"}, status_code=200)
 
 app.include_router(api_router, prefix="/v1")
 
